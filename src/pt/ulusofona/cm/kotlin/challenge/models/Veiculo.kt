@@ -8,9 +8,7 @@ abstract class Veiculo(identificador : String) : Movimentavel {
     var posicao : Posicao = Posicao()
     var dataDeAquisicao : Date = Date()
 
-    fun requerCarta () : Boolean {
-        return true
-    }
+    abstract fun requerCarta () : Boolean
 
     override fun moverPara(x: Int, y: Int) {
         this.posicao.alterarPosicaoPara(x, y)
