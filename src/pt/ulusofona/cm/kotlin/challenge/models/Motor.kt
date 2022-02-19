@@ -1,8 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
-
-class Motor(cavalos : Int, cilindrada : Int) : Ligavel{
+ open class Motor(cavalos : Int = 0, cilindrada : Int = 0) : Ligavel{
     var cavalos = cavalos
     var cilindrada = cilindrada
     var ligado = false

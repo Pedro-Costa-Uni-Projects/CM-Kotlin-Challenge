@@ -1,6 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-class Carro(identificador : String, motor : Motor) : Veiculo(identificador){
+class Carro(identificador : String, motor : Motor) : Veiculo(identificador) {
     var identificador2 = identificador
     var motor = motor
 

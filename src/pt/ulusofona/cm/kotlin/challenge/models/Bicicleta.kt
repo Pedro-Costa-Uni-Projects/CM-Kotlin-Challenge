@@ -12,3 +12,6 @@ class Bicicleta(identificador : String) : Veiculo(identificador) {
     }
 
 }
+
+//<Posicao | x:1483198325 | y:253202883>
+//<Posicao | x:1483198325 | y:253202883>
