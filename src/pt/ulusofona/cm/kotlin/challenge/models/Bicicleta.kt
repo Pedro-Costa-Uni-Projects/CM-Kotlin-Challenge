@@ -8,7 +8,7 @@ class Bicicleta(identificador : String) : Veiculo(identificador) {
     }
 
     override fun toString(): String {
-        return "Bicicleta $identificador2| Veiculo | $this.identificador | $this.posicao | $this.dataDeAquisicao"
+        return "Bicicleta $identificador2| $this.dataDeAquisicao | $this.posicao"
     }
 
 }
