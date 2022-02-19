@@ -51,7 +51,12 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
                 if (veiculo.requerCarta() and (!this.temCarta())) {
                     throw PessoaSemCartaException(this.nome)
                 } else {
-                    veiculo.moverPara(x, y)
+                    if((this.posicao.x == x) and (this.posicao.y == y)) {
+                        throw AlterarPosicaoException()
+                    } else {
+                        veiculo.moverPara(x, y)
+                    }
+
                 }
             }
         }
