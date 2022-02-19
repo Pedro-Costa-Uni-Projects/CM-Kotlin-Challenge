@@ -1,5 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
+import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
@@ -60,6 +61,8 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
         var diferenca = DateFormattor9000().dateSubtractor(this.dataDeNascimento)
         if(diferenca >= 18) {
             this.carta = Carta()
+        } else {
+            throw MenorDeIdadeException()
         }
     }
 

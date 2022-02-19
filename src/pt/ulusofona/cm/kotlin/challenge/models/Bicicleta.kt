@@ -9,7 +9,7 @@ class Bicicleta(identificador : String) : Veiculo(identificador) {
 
     override fun toString(): String {
         val convertString = DateFormattor9000().formattor(this.dataDeAquisicao)
-        return "Bicicleta $identificador2 | $convertString | ${this.posicao}"
+        return "Bicicleta | $identificador2 | $convertString | ${this.posicao}"
     }
 
 }
