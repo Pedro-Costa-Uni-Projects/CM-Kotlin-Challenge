@@ -68,11 +68,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-        if((x == posicao.x) and (y == posicao.y)) {
-            throw AlterarPosicaoException()
-        } else {
-            this.posicao.alterarPosicaoPara(x, y)
-        }
+        this.posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
