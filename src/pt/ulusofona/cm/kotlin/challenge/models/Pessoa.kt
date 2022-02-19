@@ -57,7 +57,10 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     fun tirarCarta() {
-        this.carta = Carta()
+        var diferenca = DateFormattor9000().dateSubtractor(this.dataDeNascimento)
+        if(diferenca >= 18) {
+            this.carta = Carta()
+        }
     }
 
     override fun moverPara(x: Int, y: Int) {
@@ -65,7 +68,8 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun toString(): String {
-        return "Pessoa | $nome | $dataDeNascimento | $posicao)"
+        val convertString = DateFormattor9000().formattor(this.dataDeNascimento)
+        return "Pessoa | $nome | $convertString | $posicao)"
     }
 
 

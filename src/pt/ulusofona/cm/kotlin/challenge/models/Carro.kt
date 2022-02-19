@@ -9,7 +9,8 @@ class Carro(identificador : String, motor : Motor) : Veiculo(identificador) {
     }
 
     override fun toString(): String {
-        return "Carro | $identificador2 | ${this.dataDeAquisicao} | ${this.posicao}"
+        val convertString = DateFormattor9000().formattor(this.dataDeAquisicao)
+        return "Carro | $identificador2 | $convertString | ${this.posicao}"
     }
 
 }

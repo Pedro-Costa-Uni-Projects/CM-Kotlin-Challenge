@@ -8,10 +8,8 @@ class Bicicleta(identificador : String) : Veiculo(identificador) {
     }
 
     override fun toString(): String {
-        return "Bicicleta $identificador2 | ${this.dataDeAquisicao} | ${this.posicao.x}"
+        val convertString = DateFormattor9000().formattor(this.dataDeAquisicao)
+        return "Bicicleta $identificador2 | $convertString | ${this.posicao}"
     }
 
 }
-
-//<Posicao | x:1483198325 | y:253202883>
-//<Posicao | x:1483198325 | y:253202883>
