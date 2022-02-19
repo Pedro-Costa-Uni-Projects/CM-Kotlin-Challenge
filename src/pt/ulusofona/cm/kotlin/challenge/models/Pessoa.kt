@@ -51,12 +51,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
                 if (veiculo.requerCarta() and (!this.temCarta())) {
                     throw PessoaSemCartaException(this.nome)
                 } else {
-                    if((this.posicao.x == x) and (this.posicao.y == y)) {
-                        throw AlterarPosicaoException()
-                    } else {
-                        veiculo.moverPara(x, y)
-                    }
-
+                    veiculo.moverPara(x, y)
                 }
             }
         }
@@ -79,13 +74,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-        if(this.posicao.x == x) {
-            if(this.posicao.y == y) {
-                throw AlterarPosicaoException()
-            }
-        } else {
-            this.posicao.alterarPosicaoPara(x, y)
-        }
+        this.posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
