@@ -1,9 +1,10 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
 
-class Posicao(x: Int = 0, y: Int = 0) {
+class Posicao(x: Int = 0, y: Int = 0) : Movimentavel{
     var x = x
     var y = y
 
@@ -14,6 +15,10 @@ class Posicao(x: Int = 0, y: Int = 0) {
             this.x = x
             this.y = y
         }
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+        alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
