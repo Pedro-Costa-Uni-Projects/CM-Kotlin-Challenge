@@ -16,7 +16,7 @@ class Posicao(x: Int = 0, y: Int = 0) {
     }
 
     override fun toString(): String {
-        return "Posicao | $x | $y"
+        return "Posicao | x:$x | y:$y"
     }
 
 }
