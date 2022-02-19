@@ -29,14 +29,20 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     fun venderVeiculo(identificador: String, comprador: Pessoa) {
+        var toDelete : Veiculo? = null
         for(veiculo in veiculos) {
             if(veiculo.identificador == identificador) {
                 veiculo.dataDeAquisicao = java.sql.Timestamp.valueOf(LocalDateTime.now())
                 comprador.comprarVeiculo(veiculo)
-                this.veiculos.remove(veiculo)
+                toDelete = veiculo
             }
         }
-        throw VeiculoNaoEncontradoException()
+        var done = this.veiculos.remove(toDelete)
+        if(done) {
+            return
+        } else {
+            throw VeiculoNaoEncontradoException()
+        }
     }
 
     fun moverVeiculoPara(identificador: String, x: Int, y:Int) {
