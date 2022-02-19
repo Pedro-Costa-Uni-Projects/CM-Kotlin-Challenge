@@ -7,7 +7,7 @@ import java.util.*
 
 
 class DateFormattor9000 {
-    //Nota para professor: horrivel mas já perdi muitas horas só na data
+    //Nota para professor: horrivel eu sei mas já perdi muitas horas só na data
     fun formattor(toConvert: Date): String {
         var day = toConvert.date
         var day2 = day.toString()
