@@ -77,7 +77,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
 
     override fun toString(): String {
         val convertString = DateFormattor9000().formattor(this.dataDeNascimento)
-        return "Pessoa | $nome | $convertString | $posicao)"
+        return "Pessoa | $nome | $convertString | $posicao"
     }
 
 
