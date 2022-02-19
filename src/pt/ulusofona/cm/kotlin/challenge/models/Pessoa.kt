@@ -41,7 +41,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
         for (veiculo in veiculos) {
             if (veiculo.identificador == identificador) {
                 if (veiculo.requerCarta() and (!this.temCarta())) {
-                    throw PessoaSemCartaException()
+                    throw PessoaSemCartaException(this.nome)
                 } else {
                     veiculo.moverPara(x, y)
                 }
