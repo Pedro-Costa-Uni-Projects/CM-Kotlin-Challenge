@@ -7,12 +7,17 @@ class Posicao(x: Int = 0, y: Int = 0) {
     var y = y
 
     fun alterarPosicaoPara(x: Int, y: Int) {
-        if ((this.x == x) && (this.y == y)) {
-            throw AlterarPosicaoException()
+        if ((x >=0 ) && (y >= 0)) {
+            if ((this.x == x) && (this.y == y)) {
+                throw AlterarPosicaoException()
+            } else {
+                this.x = x
+                this.y = y
+            }
         } else {
-            this.x = x
-            this.y = y
+            
         }
+
     }
 
     override fun toString(): String {
