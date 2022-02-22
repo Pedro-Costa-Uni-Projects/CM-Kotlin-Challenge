@@ -6,7 +6,7 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
  open class Motor(cavalos : Int = 0, cilindrada : Int = 0) : Ligavel{
     var cavalos = cavalos
     var cilindrada = cilindrada
-    var ligado = true
+    var ligado = false
 
     override fun ligar() {
         if (this.ligado) {
