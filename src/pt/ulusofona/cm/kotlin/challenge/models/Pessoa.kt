@@ -1,5 +1,6 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
+import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
@@ -76,7 +77,12 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-        this.posicao.alterarPosicaoPara(x, y)
+        if((this.posicao.x == x) && (this.posicao.y == y)) {
+            throw AlterarPosicaoException()
+        } else {
+            this.posicao = Posicao(x, y)
+        }
+
     }
 
     override fun toString(): String {
