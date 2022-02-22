@@ -6,7 +6,7 @@ class Carro(identificador : String, motor : Motor) : Veiculo(identificador){
     override var ligado = motor.ligado
 
     override fun requerCarta(): Boolean {
-        return true
+        return false
     }
 
     override fun toString(): String {

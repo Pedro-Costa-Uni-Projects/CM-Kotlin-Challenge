@@ -25,7 +25,7 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
     }
 
     override fun estaLigado(): Boolean {
-        return !this.ligado
+        return this.ligado
     }
 
     override fun toString(): String {
