@@ -2,14 +2,14 @@ package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 
-class Posicao(var x: Integer = Integer(0), var y: Integer = Integer(0)) {
+class Posicao(var x: Int = 0, var y: Int = 0) {
 
     fun alterarPosicaoPara(x: Int, y: Int) {
-        if ((this.x.equals(x)) && (this.y.equals(y))) {
+        if ((this.x == x) && (this.y == y)) {
             throw AlterarPosicaoException()
         } else {
-            this.x = Integer(x)
-            this.y = Integer(y)
+            this.x = x
+            this.y = y
         }
     }
 
