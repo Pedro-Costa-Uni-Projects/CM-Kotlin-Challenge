@@ -12,7 +12,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     var dataDeNascimento = dataDeNascimento
     var veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
     var carta : Carta? = null
-    var posicao : Posicao? = null
+    var posicao = Posicao()
 
     fun comprarVeiculo(veiculo: Veiculo) {
         this.veiculos.add(veiculo)
@@ -76,12 +76,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-        if (this.posicao == null) {
-            this.posicao = Posicao(x, y)
-        } else {
-            this.posicao!!.alterarPosicaoPara(x, y)
-        }
-
+        this.posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
