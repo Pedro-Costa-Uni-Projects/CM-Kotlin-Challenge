@@ -5,7 +5,7 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 class Posicao(var x: Int = 0, var y: Int = 0) {
 
     fun alterarPosicaoPara(x: Int, y: Int) {
-        if ((this.x == x) && (this.y == y)) {
+        if ((this.x.equals(x)) && (this.y.equals(y))) {
             throw AlterarPosicaoException()
         } else {
             this.x = x
