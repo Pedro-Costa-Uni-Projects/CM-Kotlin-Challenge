@@ -76,12 +76,12 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-
+        this.posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String {
         val convertString = DateFormattor9000().formattor(this.dataDeNascimento)
-        return "Pessoa | $nome | $convertString | $posicao"
+        return "Pessoa | $nome | $convertString | Posicao | x:${posicao.x} | y:${posicao.y}"
     }
 
 
