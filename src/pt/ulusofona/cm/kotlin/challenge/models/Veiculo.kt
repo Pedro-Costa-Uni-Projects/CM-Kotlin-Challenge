@@ -12,6 +12,7 @@ abstract class Veiculo(identificador : String) : Movimentavel, Motor() {
 
     override fun moverPara(x: Int, y: Int) {
         this.posicao.alterarPosicaoPara(x, y)
+        this.ligado = false
     }
 
     override fun toString(): String {
