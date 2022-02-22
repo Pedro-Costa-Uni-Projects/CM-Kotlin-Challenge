@@ -51,9 +51,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
                     throw PessoaSemCartaException(this.nome)
                 } else {
                     veiculo.moverPara(x, y)
-                    if(veiculo.estaLigado()) {
-                        veiculo.desligar()
-                    }
+                    
                 }
             }
         }
