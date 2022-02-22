@@ -1,10 +1,9 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.Date
 
-abstract class Veiculo(identificador : String) : Movimentavel, Ligavel {
+abstract class Veiculo(identificador : String) : Movimentavel {
     var identificador = identificador
     var posicao : Posicao = Posicao()
     var dataDeAquisicao : Date = Date()
