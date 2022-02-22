@@ -1,6 +1,5 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
-import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
@@ -13,7 +12,7 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     var dataDeNascimento = dataDeNascimento
     var veiculos : MutableList<Veiculo> = mutableListOf<Veiculo>()
     var carta : Carta? = null
-    var posicao = Posicao()
+    var posicao : Posicao? = null
 
     fun comprarVeiculo(veiculo: Veiculo) {
         this.veiculos.add(veiculo)
@@ -77,11 +76,12 @@ class Pessoa(nome : String, dataDeNascimento: Date) : Movimentavel{
     }
 
     override fun moverPara(x: Int, y: Int) {
-        if (this.posicao.equals(Posicao(x, y))) {
-            throw AlterarPosicaoException()
+        if (this.posicao == null) {
+            this.posicao = Posicao(x, y)
         } else {
-            this.posicao.alterarPosicaoPara(x, y)
+            this.posicao!!.alterarPosicaoPara(x, y)
         }
+
     }
 
     override fun toString(): String {
